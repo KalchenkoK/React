@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TodoItem from "../TodoItem/todoItem";
-import "./todoList.css"
+import "./todoList.css";
 export default class TodoList extends Component {
   constructor() {
     super();
@@ -35,27 +35,27 @@ export default class TodoList extends Component {
       },
     ],
   };
-  
+
   render() {
-    const {todo}= this.state
+    const { todo } = this.state;
     return (
       <>
         {todo.map((el) => {
-          let backColor = el.completed ? "backColor" : null;                   
-          return(<TodoItem
-          className={backColor}
-            title={el.title}
-            deleteF={() => this.onButtonClick(el)}
-            key={el.id}
-            
-          />);
-          })}
+          let backColor = el.completed ? "backColor" : null;
+          return (
+            <TodoItem
+              className={backColor}
+              item={el}
+              onButtonClick={this.onButtonClick}
+              key={el.id}
+            />
+          );
+        })}
       </>
     );
   }
-  onButtonClick(el) {
-    const {todo}= this.state
-    let index = todo.indexOf(el);
-    this.setState(todo.splice(index, 1));
+  onButtonClick(id) {
+    const newState = this.state.todo.filter((onetodo) => onetodo.id !== id);
+    this.setState({ todo: newState });
   }
 }
