@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { API_URL } from "../../constants";
 import Contact from "../contact/Contact";
-import Form from "../form/form";
+import Form from "../form/Form";
 import "./contacts.css";
 export default class Contacts extends Component {
   state = {
@@ -45,8 +45,7 @@ export default class Contacts extends Component {
 
         {!isVisible && (
           <Form
-            onResetButton={this.onResetButton}
-            isVisible={isVisible}
+            onResetButton={this.onResetButton}           
             onInputChangeName={this.onInputChangeName}
             onInputChangeSurname={this.onInputChangeSurname}
             onInputChangePhone={this.onInputChangePhone}
