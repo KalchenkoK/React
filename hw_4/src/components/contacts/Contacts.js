@@ -20,6 +20,13 @@ export default function Contacts() {
     contactsServices.deleteContact(id).then(() => setContacts(newContacts));
   };
 
+  //ДЕЛАЮ
+  const onButtonUpdate = (id) =>{
+    const updatedContact = contacts.find((contact) => contact.id === id);
+    const newItem = { ...updatedContact };
+    contactsServices.updateContact(id, newItem).then(()=>setContacts(contacts.map((el)=>el.id === id? newItem:updatedContact)))
+  }
+
   const onChangeButton = () => {
     setVisible(!isVisible);
   };
@@ -54,7 +61,7 @@ export default function Contacts() {
   return (
     <>
       {isVisible && (
-        <ContactList contacts={contacts} onButtonDelete={onButtonDelete} />
+        <ContactList contacts={contacts} onButtonDelete={onButtonDelete} onButtonUpdate={onButtonUpdate}/>
       )}
       {isVisible && (
         <button className="changeBtn" onClick={onChangeButton}>

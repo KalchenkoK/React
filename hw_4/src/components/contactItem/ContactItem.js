@@ -9,6 +9,7 @@ export default function Contact(props) {
         <div>{contact.sername}</div>
         <div>{contact.phone}</div>
         <button onClick={() => props.onButtonDelete(contact.id)}>Delete</button>
+        <button onClick={() => props.onButtonUpdate(contact.id)}>Update</button>
       </div>
     </>
   );

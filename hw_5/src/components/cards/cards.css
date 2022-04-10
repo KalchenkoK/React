@@ -1,0 +1,14 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cards > div {
+  border: solid 1px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.addBtn {
+  height: 50px;
+  margin-bottom: 20px;
+}
