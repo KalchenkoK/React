@@ -1,0 +1,15 @@
+.noCompleted {
+  background-color: yellow;
+}
+.completed {
+  background-color: rgb(121, 196, 121);
+}
+li {
+  width: 500px;
+  text-align: left;
+}
+.input {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
