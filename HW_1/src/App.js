@@ -27,6 +27,8 @@ function Footer(){
         <p><a href="https://facebook.com">Facebook </a></p>
         <p><a href="https://instagram.com">Instagram</a></p>
         <p><a href="https://linkedin.com">Linkedin</a></p>
+
+        
       </div>
     </footer>
   )
